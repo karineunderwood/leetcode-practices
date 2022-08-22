@@ -43,3 +43,43 @@ def two_sum(nums, target):
             tracker[num] = idx
     return 
 print(two_sum([2, 7, 11, 15], 9))
+
+
+""" 2 - Roman to Integer (string)
+    Given a roman numeral, convert it to an integer.
+
+    Example 1:
+    Input: s = "III"
+    Output: 3
+    Explanation: III = 3
+
+    Example 2: 
+    Input: s = "LVIII"
+    Output: 58
+    Explanation:L = 50 V = 5 III= 3
+
+"""
+
+# start with a hashmap with Symbol as key and value as val.
+#  set a variable for result initialy at zero
+# check on the iteration if the number we are checking is smaller than 
+# the next number, then subtract it from the result 
+# if it is larger than add it to the result
+
+def roman_to_integer(s):
+    roman_map = {"I": 1,
+                 "V": 5,
+                 "X": 10,
+                 "L": 50,
+                 "C": 100,
+                 "D": 500,
+                 "M": 1000}
+
+    result = 0
+    for i in range(len(s)):
+        if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i + 1]]:
+            result -= roman_map[s[i]]
+        else:
+            result += roman_map[s[i]]
+    return result
+print(roman_to_integer("MCMXCIV"))
