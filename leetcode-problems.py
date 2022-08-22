@@ -85,3 +85,45 @@ def roman_to_integer(s):
             result += roman_map[s[i]]
     return result
 print(roman_to_integer("MCMXCIV"))
+
+
+""" 26 - Remove Duplicates from Sorted Array
+Given an integer array nums sorted in non-decreasing order, 
+remove the duplicates in-place such that each unique element 
+appears only once.
+The relative order of the elements should be kept the same.
+Return k after placing the final result in the first k slots of nums
+
+Example 1:
+Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+
+Example 2:
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+"""
+
+# initialize a counter at 1
+# do this iteration until the index is smaller than the length of the list
+# iterate through the list and check:
+# if the number at the index that I started(index 1) is equal
+# to index - 1, that means they are duplicates
+# then remove/pop from the list
+# if the number is not equal to the number before, then increase the counter/index.
+# at the end return the length of the list with the duplicates removed from it
+
+def remove_duplicates(nums):
+
+    counter = 1
+
+    while counter < len(nums):
+        if nums[counter] == nums[counter - 1]:
+            nums.pop(counter)
+        else:
+            counter += 1
+    return len(nums)
+print(remove_duplicates([0,0,1,1,1,2,2,3,3,4]))
+
+
+
+
