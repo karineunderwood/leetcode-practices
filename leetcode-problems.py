@@ -30,6 +30,8 @@ Output: [1, 2]
 # is in the had, then it means that you found the second num (the pair)
 # so return [value(index), and the num(index) you just checked]
 
+# Run Time: O(n) -> iterate through the whole string
+# Space: O(1) -> did not use an extra memory
 
 def two_sum(nums, target):
 
