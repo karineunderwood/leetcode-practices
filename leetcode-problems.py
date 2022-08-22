@@ -125,5 +125,41 @@ def remove_duplicates(nums):
 print(remove_duplicates([0,0,1,1,1,2,2,3,3,4]))
 
 
+""" 268 - Missing Number (Array)
+Given an array nums containing n distinct 
+numbers in the range [0, n],
+return the only number in the range that is missing from the array.
+
+Example 1:
+Input: nums = [3,0,1]
+Output: 2
+
+Example 2:
+Input: nums = [9,6,4,2,3,5,7,0,1]
+Output: 8
+"""
+
+# Brute force: 
+# sort the list using sorted()
+# then loop through list and check if the num is different than nums[index]
+# if it is then return the num
+
+# Optimal Solution with no extra space 
+# we can use a formula sum of list n numbers = n*(n+1)//2
+# n is equal to the length of nums - > [0, 1, 2, 3, 5] n = 5
+# expected sum will be 5*6 // 2 = 15
+# we sum all the numbers in the list sum of nums = 11
+# then subtract expected from actual sum 15 - 11 = 4
+# the missing number is 4
+
+# Time Complexity : O(n) -> went through the whole list to sum the numbers
+# Space: O(1) -> No extra memory
+
+def missing_number(nums):
+
+    expected_num = (len(nums)*(len(nums) + 1)) // 2
+    return expected_num - sum(nums)
+
+print(missing_number([9,6,4,2,3,5,7,0,1]))
 
 
