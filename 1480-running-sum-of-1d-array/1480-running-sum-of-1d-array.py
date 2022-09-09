@@ -1,10 +1,18 @@
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
-        n = len(nums)
         
-        for i in range(1, n):
-            nums[i] += nums[i-1]
-        return nums
+        soma = 0
+        output = []
+        for i in nums:
+            soma = i + soma
+            output.append(soma)
+        return output
+            
         
+#         go through the list of integers.
+#         define a new integer
+#         variable for output
+#         return the new list
+     
         
             
