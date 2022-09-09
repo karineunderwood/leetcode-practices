@@ -4,7 +4,7 @@ class Solution:
         soma = 0
         output = []
         for i in nums:
-            soma = i + soma
+            soma += i
             output.append(soma)
         return output
             
