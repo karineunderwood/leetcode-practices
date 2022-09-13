@@ -1,20 +1,29 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
 #         if length of t is smaller than s, return false
-#   iterate over first string 
+#   have two pointer for char s and char t
+#  while char s is less than the len of s and char t is less than len of t
+# check if the char from s is equal to char from t
+#  if it is then increment char s
+#  if its not move the pointer char t to next by increment by one
+# when exit the while condition then check if char s is equal to the len of s
+# if yes, return true, otherwise, false
 
-        char_s = 0
-        char_t = 0
-        len_s = len(s)
-        len_t = len(t)
-        
-        while char_s < len_s and char_t < len_t:
-            if s[char_s] == t[char_t]:
-                char_s += 1
-            char_t += 1
-        if char_s == len(s):
-            return True
-            
-        else:
+        if len(t) < len(s):
             return False
         
+        charS = 0 
+        charT = 0
+        
+        while charS < len(s) and charT < len(t):
+            if s[charS] == t[charT]:
+                charS += 1
+            charT += 1
+            
+        if charS == len(s):
+            return True
+        return False
+        
+        
+        
+    
