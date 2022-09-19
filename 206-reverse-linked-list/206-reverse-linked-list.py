@@ -7,21 +7,22 @@ class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         
+
+# TWO POINTER APPROACH
+# HAVE A POINTER POINTING TO THE HEAD
+# HAVE A PREVIOUS POINTER POINTING TO NULL
+# WHILE THE HEAD IS NOT NULL:
+#   SET CURRENT.NEXT = NULL
+#   SET PREVIOUS TO CURRENT
+#   SET CURRENT TO NEXT POINTER
+
+        prev = None
+        current = head
         
-        if head is None:
-            return None
-#         need a first point
-        first = None
-#         need a second point
-        second = head
-#     third point 
-        third = head.next
-        
-        while second:
-            second.next = first
-            first = second
-            second = third
-            if third is not None:
-                third = third.next
-        return first
+        while current:
+            next_pointer = current.next
+            current.next = prev
+            prev = current
+            current = next_pointer
+        return prev
         
