@@ -8,21 +8,15 @@ class Solution:
 
         
 
-# TWO POINTER APPROACH
-# HAVE A POINTER POINTING TO THE HEAD
-# HAVE A PREVIOUS POINTER POINTING TO NULL
-# WHILE THE HEAD IS NOT NULL:
-#   SET CURRENT.NEXT = NULL
-#   SET PREVIOUS TO CURRENT
-#   SET CURRENT TO NEXT POINTER
+#         start with two pointer current and prev. Current set to the head and prev set to none
 
-        prev = None
+#    have a third node pointing to the current.next 
         current = head
+        prev = None
         
         while current:
-            next_pointer = current.next
+            third_node = current.next
             current.next = prev
             prev = current
-            current = next_pointer
+            current = third_node
         return prev
-        
