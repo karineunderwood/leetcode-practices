@@ -1,17 +1,19 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        find_target = {}
+        
+        for idx, num in enumerate(nums):
+            if (target - num) in find_target:
+                return [find_target[target-num], idx]
+            else:
+                find_target[num] = idx
+                
+        return []
 
         
         
-#     use a dict to store key and value
-        two_sum_dict = {}
-        
-        for idx, number in enumerate(nums):
-            if (target - number) in two_sum_dict:
-                return [two_sum_dict[target-number], idx]
-            else:
-                two_sum_dict[number] = idx
-        return []
+
                 
         
         
