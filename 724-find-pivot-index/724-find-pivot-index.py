@@ -10,12 +10,20 @@ class Solution:
 # if it is not them increase the left count + the element
 # if this condition doenst match then return -1
 
-        leftSum, rightSum = 0, sum(nums)
+        leftSum = 0
+        rightSum = sum(nums)
         
-        for idx, ele in enumerate(nums):
-            rightSum -= ele
+        for idx, elem in enumerate(nums):
+            rightSum -= elem
             if leftSum == rightSum:
-                    return idx
-            leftSum += ele
+                return idx
+            else:
+                leftSum += elem
         return -1
+        
+        
+
+        
+        
+        
         
