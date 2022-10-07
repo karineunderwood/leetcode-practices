@@ -3,16 +3,12 @@ class Solution:
         
         soma = 0
         output = []
-        for i in nums:
-            soma += i
+        
+        for num in nums:
+            soma += num
             output.append(soma)
         return output
             
-        
-#         go through the list of integers.
-#         define a new integer
-#         variable for output
-#         return the new list
-     
+            
         
             
