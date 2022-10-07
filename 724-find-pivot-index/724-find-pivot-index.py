@@ -9,16 +9,14 @@ class Solution:
 # then check if left is equal to right, if it is return the index
 # if it is not them increase the left count + the element
 # if this condition doenst match then return -1
-
+        total = sum(nums)
         leftSum = 0
-        rightSum = sum(nums)
         
-        for idx, elem in enumerate(nums):
-            rightSum -= elem
+        for i in range(len(nums)):
+            rightSum = total - nums[i] - leftSum
             if leftSum == rightSum:
-                return idx
-            else:
-                leftSum += elem
+                return i
+            leftSum += nums[i]
         return -1
         
         
