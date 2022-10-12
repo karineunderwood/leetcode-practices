@@ -16,16 +16,18 @@ class Solution:
         "M": 1000
                     }
         
-        output = []
+        
+        
+        output = ""
         
         for key, val in reversed(intRoman.items()):
             while num > 0:
                 if val <= num:
-                    output.append(key)
+                    output += key
                     num -= val
                 else:
                     break
-        return "".join(output)
+        return output
                 
         
         
