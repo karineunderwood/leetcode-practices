@@ -1,17 +1,19 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        
-        result = {}
-        
-        for s in strs:
-            sortString = "".join(sorted(s))
+        anagramDict = {}
+
+        for string in strs:
+            sorted_string = "".join(sorted(string))
+
+            if sorted_string not in anagramDict:
+                anagramDict[sorted_string] = []
             
-            if sortString not in result:
-                result[sortString] = []
-                
-            result[sortString].append(s)
-                
-        return result.values()
-                
+            anagramDict[sorted_string].append(string)
+        return anagramDict.values()
+
+
+        
+        
+        
             
             
